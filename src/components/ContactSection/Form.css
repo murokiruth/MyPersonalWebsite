@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap');
+
+.fname {
+	width: 46%;
+	margin-top: 3px;
+	margin-right: 10px;
+	height: 30px;
+	padding: 5px;
+	float: left;
+	border: 1px solid grey;
+	border-radius: 5px;
+}
+
+.lname {
+	width: 46%;
+	margin-top: 3px;
+	height: 30px;
+	padding: 5px;
+	float: left;
+	border: 1px solid grey;
+	border-radius: 5px;
+}
+
+input {
+	width: 97%;
+	margin-top: 3px;
+	height: 30px;
+	padding: 5px;
+	border: 1px solid grey;
+	border-radius: 5px;
+}
+
+textarea {
+	width: 97%;
+	margin-top: 3px;
+	height: 100px;
+	padding: 5px;
+	border: 1px solid grey;
+	border-radius: 5px;
+}
+
+i {
+	padding-left: 10px;
+}
