@@ -5,7 +5,7 @@ import aboutImg from '../../images/imageA.svg';
 const About = () => {
 	return (
 		<>
-			<AboutCont>
+			<AboutCont id='about'>
 				<AboutWrapper>
 					<AboutRow>
 						<Column1>

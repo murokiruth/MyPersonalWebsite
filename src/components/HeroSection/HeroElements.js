@@ -6,9 +6,10 @@ export const HeroCont = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding: 0 30px;
-	height: 800px;
+	height: 600px;
 	position: relative;
 	z-index: 1;
+	font-family: 'Cinzel', serif;
 `;
 
 export const HeroBg = styled.div`

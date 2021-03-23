@@ -5,8 +5,9 @@ import LogoImg from '../../images/logoWhite.png';
 
 export const Head = styled.nav`
 	display: flex;
-	background: teal;
+	background: ${({ scrollNav }) => (scrollNav ? '#008080' : 'transparent')};
 	height: 80px;
+	margin-top: -80px;
 	align-items: center;
 	justify-content: center;
 	position: sticky;

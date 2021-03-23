@@ -10,7 +10,7 @@ export const AboutCont = styled.div`
 export const AboutWrapper = styled.div`
 	display: grid;
 	z-index: 1;
-	height: 500px;
+	height: 400px;
 	width: 100%;
 	max-width: 1100px;
 	margin-right: auto;
@@ -51,6 +51,7 @@ export const Img = styled.img`
 
 export const AboutH1 = styled.h1`
 	margin-bottom: 24px;
+	font-family: 'Cinzel', serif;
 `;
 
 export const AboutP = styled.p`

@@ -1,35 +1,39 @@
 import React from 'react';
-import { ProjectCont, ProjectWrapper, ProjectCard, ProjectFace, ProjectH2, ProjectP } from './ProjectElements';
-// import { ProjectItemOne, ProjectItemTwo, ProjectItemThree } from './Data';
+import { Data } from './Data';
+import {
+	ProjectCont,
+	ProjectWrapper,
+	ProjectCard,
+	ProjectFace,
+	ProjectH1,
+	ProjectH2,
+	ProjectH3,
+	ProjectP,
+	Section,
+} from './ProjectElements';
 
-const ProjectSection = ({ id, heading, description }) => {
+const ProjectSection = () => {
 	return (
 		<>
-			<ProjectCont>
-				<ProjectWrapper>
-					<ProjectCard id={id}>
-						<ProjectFace></ProjectFace>
-						<ProjectH2>{heading}</ProjectH2>
-						<ProjectP>{description}</ProjectP>
-					</ProjectCard>
-
-					<ProjectCard id={id}>
-						<ProjectFace></ProjectFace>
-						<ProjectH2>{heading}</ProjectH2>
-						<ProjectP>{description}</ProjectP>
-					</ProjectCard>
-
-					<ProjectCard id={id}>
-						<ProjectFace></ProjectFace>
-						<ProjectH2>{heading}</ProjectH2>
-						<ProjectP>{description}</ProjectP>
-					</ProjectCard>
-				</ProjectWrapper>
-			</ProjectCont>
+			<Section>
+				<ProjectH1> PROJECTS</ProjectH1>
+				<ProjectCont id='projects'>
+					{Data.map((item) => (
+						<ProjectWrapper key={item.id}>
+							<a href={item.URL} style={{ textDecoration: 'none' }} target='_blank' rel='noreferrer'>
+								<ProjectCard>
+									<ProjectFace src={item.img} />
+									<ProjectH2>{item.title}</ProjectH2>
+									<ProjectH3>{item.heading}</ProjectH3>
+									<ProjectP>{item.description}</ProjectP>
+								</ProjectCard>
+							</a>
+						</ProjectWrapper>
+					))}
+				</ProjectCont>
+			</Section>
 		</>
 	);
 };
 
 export default ProjectSection;
-
-// {...ProjectItemOne} {...ProjectItemTwo} {...ProjectItemThree}

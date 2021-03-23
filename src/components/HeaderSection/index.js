@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaLinkedin, FaGit } from 'react-icons/fa';
+import { animateScroll as scroll } from 'react-scroll';
 import {
 	Head,
 	HeaderCont,
@@ -12,27 +13,54 @@ import {
 	NavLink,
 } from './HeaderElements.js';
 
-const Header = () => {
+const Header = ({ toggle }) => {
+	const [scrollNav, setScrollNav] = useState(false);
+
+	const changeNav = () => {
+		if (window.scrollY >= 80) {
+			setScrollNav(true);
+		} else {
+			setScrollNav(false);
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', changeNav);
+	}, []);
+
+	const toggleHome = () => {
+		scroll.scrollToTop();
+	};
+
 	return (
 		<>
-			<Head>
+			<Head scrollNav={scrollNav}>
 				<HeaderCont>
 					<Logo to='/'>
-						<LogoIcon />
+						<LogoIcon onClick={toggleHome} />
 					</Logo>
 					<NavMenu>
 						<NavItem>
-							<NavLink to='about'>About Me</NavLink>
+							<NavLink to='about' smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+								About Me
+							</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink to='projects'>Projects</NavLink>
+							<NavLink to='projects' smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+								Projects
+							</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink to='contact' smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+								Contact Me
+							</NavLink>
 						</NavItem>
 					</NavMenu>
 					<SocialIcons>
-						<SocialIconLink href='https://www.git.com/' target='_blank' aria-label='Git'>
+						<SocialIconLink href='https://github.com/murokiruth' target='_blank' aria-label='Git'>
 							<FaGit />
 						</SocialIconLink>
-						<SocialIconLink href='https://www.linkedin.com/' target='_blank' aria-label='Linkedin'>
+						<SocialIconLink href='https://www.linkedin.com/in/ruth-m-313890161/' target='_blank' aria-label='Linkedin'>
 							<FaLinkedin />
 						</SocialIconLink>
 					</SocialIcons>
